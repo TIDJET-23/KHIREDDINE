@@ -1,11 +1,11 @@
 {
-  "name": "What Watch",
+  "name": "khireddine",
   "short_name": "KHIREDDINE",
-  "start_url": "./index.html",
+  "start_url": "../index.html",
   "display": "standalone",
   "background_color": "white",
   "theme_color": "white",
-  "orientation": "portrait-primary",
+  //"orientation": "portrait-primary",
   "icons": [
     {
       "src": "./icons/icon-72x72.png",
