@@ -1,10 +1,10 @@
 // Service Worker
-const cacheName = "my-first-pwa";
+const cacheName = "khireddine_pwa";
 const filesToCache = [
   "/",
-  "../index.html",
-  "../assets/script.js",
-  "../assets/styles.css"
+  "./index.html",
+  "./assets/script.js",
+  "./assets/styles.css"
 ];
 
 self.addEventListener("install", e => {
