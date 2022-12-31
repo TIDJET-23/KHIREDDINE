@@ -2,9 +2,9 @@
 const cacheName = "my-first-pwa";
 const filesToCache = [
   "/",
-  "index.html",
-  "app.js",
-  "./styles/styles.css"
+  "../index.html",
+  "../assets/script.js",
+  "../assets/styles.css"
 ];
 
 self.addEventListener("install", e => {
