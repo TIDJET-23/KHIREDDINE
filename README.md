@@ -15,6 +15,6 @@ This repository contains the source code for my online portfolio. This project i
 
 ## Installation
 To view the portfolio locally:
-1. Clone this repository: `git clone https://github.com/your-username/repository-name.git`
+1. Clone this repository
 2. Open the `index.html` file in your browser.
 
