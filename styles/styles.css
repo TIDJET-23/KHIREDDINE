@@ -1173,18 +1173,10 @@ section {
 }
 
 .skill-item {
-  display: flex;
-  align-items: flex-start;
   background: var(--color-grey0);
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .skill-icon {
@@ -1195,8 +1187,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
-  flex-shrink: 0;
+  margin: 0 auto 1rem;
 }
 
 .skill-icon i {
@@ -1208,12 +1199,14 @@ section {
   font-size: 1.2rem;
   margin: 0 0 0.5rem 0;
   color: var(--color-secondary);
+  text-align: center;
 }
 
 .skill-content p {
   margin: 0;
   color: var(--color-white);
   line-height: 1.5;
+  text-align: center;
 }
 
 .skills-other {
@@ -1228,17 +1221,11 @@ section {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
 }
 
-.skill-item-large:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
 .skill-icon-large {
-  background: var(--color-accent);
+  background: var(--color-secondary);
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -1287,6 +1274,120 @@ section {
   }
 }
 
+/* About section enhancements */
+.about-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 2rem 0;
+}
+
+.about-card {
+  background: var(--color-grey0);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.about-text p {
+  color: var(--color-white);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Education section enhancements */
+.education-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 2rem 0;
+}
+
+.education-timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin-top: 2rem;
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--color-secondary);
+  border-radius: 5px;
+}
+
+.education-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.edu-icon {
+  background: var(--color-secondary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.edu-icon i {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.edu-content {
+  background: var(--color-grey0);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.edu-duration {
+  display: inline-block;
+  background: var(--color-grey-4);
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.edu-content h3 {
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--color-secondary);
+}
+
+.edu-content h4 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: var(--color-white);
+  font-weight: 500;
+}
+
 /* Projects section enhancements */
 .projects-container {
   width: 100%;
@@ -1306,15 +1407,9 @@ section {
   background: var(--color-grey0);
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   gap: 1.5rem;
   padding: 1.5rem;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .project-icon {
@@ -1359,7 +1454,7 @@ section {
 .project-content h4 {
   font-size: 1.1rem;
   margin: 0 0 1rem 0;
-  color: var(--color-accent);
+  color: var(--color-white);
   font-weight: 500;
 }
 
@@ -1376,8 +1471,8 @@ section {
 }
 
 .skill-tag {
-  background: var(--color-accent);
-  color: var(--color-primary);
+  background: var(--color-grey-4);
+  color: var(--color-white);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -1460,7 +1555,7 @@ section {
 .exp-content h4 {
   font-size: 1.1rem;
   margin: 0 0 1rem 0;
-  color: var(--color-accent);
+  color: var(--color-white);
   font-weight: 500;
 }
 
@@ -1495,19 +1590,12 @@ section {
 }
 
 .contact-card {
-  display: flex;
-  align-items: flex-start;
   background: var(--color-grey0);
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 80px;
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 .contact-icon {
@@ -1518,10 +1606,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
-  flex-shrink: 0;
-  flex-direction: column;
-  justify-content: center;
+  margin: 0 auto 1rem;
 }
 
 .contact-icon i {
@@ -1529,23 +1614,16 @@ section {
   color: var(--color-primary);
 }
 
-.contact-details {
-  flex: 1;
-  min-width: 0; /* Empêche le texte de déborder */
-}
-
 .contact-details h4 {
   font-size: 1.2rem;
   margin: 0 0 0.5rem 0;
   color: var(--color-secondary);
-  white-space: nowrap; /* Empêche le titre de faire un retour à la ligne */
 }
 
 .contact-details p {
   margin: 0;
   color: var(--color-white);
   line-height: 1.5;
-  word-break: break-word; /* Coupe les mots longs si nécessaire */
 }
 
 .social-links-section {
