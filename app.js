@@ -18,7 +18,7 @@
 
     // Animated roles functionality
     function initAnimatedRoles() {
-        const roles = ['Backend Development', 'DevSecOps Engineering', 'Frontend Development', 'Monitoring Systems', 'Cloud Solutions', 'Security Engineering'];
+        const roles = ['UI/UX Design', 'Infographie', 'Graphic Design', 'Frontend Development', 'Backend Development', 'DevSecOps Engineering', 'Monitoring Systems', 'Cloud Solutions', 'Security Engineering'];
         let currentRoleIndex = 0;
         let currentText = '';
         let isDeleting = false;
@@ -66,10 +66,37 @@
         setTimeout(updateText, 1000); // Start after 1 second
     }
 
+    // Design gallery filter
+    function initDesignFilter() {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.design-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active-filter'));
+                btn.classList.add('active-filter');
+
+                const filter = btn.dataset.filter;
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.4s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+
     // Wait for DOM to be fully loaded before initializing animation
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAnimatedRoles);
+        document.addEventListener('DOMContentLoaded', () => {
+            initAnimatedRoles();
+            initDesignFilter();
+        });
     } else {
-        initAnimatedRoles(); // DOM is already loaded
+        initAnimatedRoles();
+        initDesignFilter();
     }
 })();

@@ -119,6 +119,29 @@ section {
 .controls .active-btn i {
   color: var(--color-white);
 }
+.controls .control-design {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899, #f59e0b);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite, pulseGlow 2s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.controls .control-design i {
+  color: #fff;
+  font-size: 1.3rem;
+}
+.controls .control-design:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(139, 92, 246, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.6), 0 0 40px rgba(139, 92, 246, 0.3); }
+}
 
 .theme-btn {
   top: 5%;
@@ -854,12 +877,24 @@ section {
   }
   .controls .active-btn {
     background: var(--color-secondary);
-    box-shadow: 
+    box-shadow:
       0 4px 15px rgba(56, 189, 248, 0.4),
       inset 0 0 10px rgba(255, 255, 255, 0.3);
   }
   .controls .active-btn i {
     color: var(--color-white);
+  }
+  .controls .control-design {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899, #f59e0b);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite, pulseGlow 2s ease-in-out infinite;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  .controls .control-design i {
+    color: #fff;
+  }
+  .controls .control-design:hover i {
+    color: #fff;
   }
   .controls .active-btn::after {
     content: '';
@@ -1687,6 +1722,139 @@ section {
   
   .social-link {
     width: 150px;
+  }
+}
+
+/* Design / UI-UX Section */
+.design-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.design-intro {
+  text-align: center;
+  color: var(--color-grey-3);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.design-filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--color-grey0);
+  color: var(--color-white);
+  border: 2px solid transparent;
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.filter-btn.active-filter {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
+}
+
+.design-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.design-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.design-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.design-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.design-img img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.design-card:hover .design-img img {
+  transform: scale(1.05);
+  filter: brightness(0.6);
+}
+
+.design-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.design-card:hover .design-overlay {
+  transform: translateY(0);
+}
+
+.design-overlay h4 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 0 0 0.3rem;
+}
+
+.design-overlay p {
+  font-size: 0.9rem;
+  color: var(--color-grey-4);
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive design gallery */
+@media screen and (max-width: 768px) {
+  .design-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .design-filter {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
   }
 }
 
