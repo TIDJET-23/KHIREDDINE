@@ -120,10 +120,11 @@ section {
   color: var(--color-white);
 }
 .controls .control-design {
-  background: linear-gradient(135deg, #8b5cf6, #ec4899, #f59e0b);
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite, pulseGlow 2s ease-in-out infinite;
+  background-color: #f59e0b;
+  animation: pulseGlow 2s ease-in-out infinite;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: visible;
 }
 .controls .control-design i {
   color: #fff;
@@ -131,16 +132,39 @@ section {
 }
 .controls .control-design:hover {
   transform: scale(1.2);
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+  background-color: #d97706;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
 }
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.design-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #f59e0b;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  animation: tooltipBounce 1.5s ease-in-out infinite;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+.design-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: #f59e0b;
+}
+@keyframes tooltipBounce {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(-8px); opacity: 0.8; }
 }
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 8px rgba(139, 92, 246, 0.4); }
-  50% { box-shadow: 0 0 20px rgba(236, 72, 153, 0.6), 0 0 40px rgba(139, 92, 246, 0.3); }
+  0%, 100% { box-shadow: 0 0 8px rgba(245, 158, 11, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.6), 0 0 40px rgba(245, 158, 11, 0.3); }
 }
 
 .theme-btn {
@@ -885,16 +909,37 @@ section {
     color: var(--color-white);
   }
   .controls .control-design {
-    background: linear-gradient(135deg, #8b5cf6, #ec4899, #f59e0b);
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease infinite, pulseGlow 2s ease-in-out infinite;
+    background-color: #f59e0b;
+    animation: pulseGlow 2s ease-in-out infinite;
     border: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: visible;
   }
   .controls .control-design i {
     color: #fff;
   }
   .controls .control-design:hover i {
     color: #fff;
+  }
+  .design-tooltip {
+    right: auto;
+    bottom: 65px;
+    top: auto;
+    background: #f59e0b;
+    animation: tooltipBounceUp 1.5s ease-in-out infinite;
+  }
+  .design-tooltip::after {
+    right: 50%;
+    top: auto;
+    bottom: -10px;
+    transform: translateX(50%);
+    border: 6px solid transparent;
+    border-top-color: #f59e0b;
+    border-left-color: transparent;
+  }
+  @keyframes tooltipBounceUp {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-6px); opacity: 0.8; }
   }
   .controls .active-btn::after {
     content: '';
